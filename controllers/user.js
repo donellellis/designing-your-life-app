@@ -12,12 +12,11 @@ module.exports = {
     .then(user => {
       res.redirect("/user/" + user.id)
     })
+  },
+  show: (req, res) => {
+    User.findOne({_id: req.params.id})
+    .then(user => {
+      res.render("user/show.hbs", {user});
+      });
   }
-  // ,
-  // show: (req, res) => {
-  //   User.findOne({_id: req.params.id})
-  //   .then(user => {
-  //     res.render("user/show.hbs", {user});
-  //     });
-  // }
 };

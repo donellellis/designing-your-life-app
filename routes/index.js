@@ -3,7 +3,7 @@ const router = express.Router();
 
 // what is this?
 // router.use((req, res, next) => {
-//   res.locals.currentUser = req.user;
+//   res.localdbs.currentUser = req.user;
 //   next();
 // });
 
