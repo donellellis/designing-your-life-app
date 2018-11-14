@@ -18,20 +18,5 @@ module.exports = {
     .then(user => {
       res.render("user/show.hbs", {user});
       });
-  },
-  createHealthGauge: (req, res) => {
-    HealthGauge.create({
-      level: req.body.level
-    })
-    .then(user => {
-      res.redirect(`/${HealthGauge._id}`)
-    })
-  },
-  showHealthGauge: (req, res) => {
-    User.findOne({_id: req.params.id})
-    .populate('health')
-    .then(healthGauge => {
-      res.render("user/showHealth.hbs", {healthGauge});
-    })
   }
 };

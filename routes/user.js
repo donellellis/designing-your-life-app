@@ -9,10 +9,5 @@ router.post('/sign-up', userController.createSignUp);
 // router.get('/logout', userController.logout);
 router.get('/:id', userController.show);
 
-// health gauge
-router.post('/',userController.createHealthGauge)
-router.get('/:id', userController.showHealthGauge )
-
-
 
 module.exports = router;
