@@ -4,17 +4,43 @@ const User = require("../models/User.js")
 // renders form to create new health gauge
 module.exports = {
     newHealthGauge: (req, res) => {
-        res.render('user/showHealth.hbs')
+        res.render('user/createHealth.hbs', {id: req.params.id})
     },
     createHealthGauge: (req, res) => {
+        //create the health guage with the user id
         HealthGauge.create({
-            level: req.body.level
+            level: req.body.level,
+            user: req.params.id
         })
         .then(healthGauge => {
-            res.redirect('/' +healthGauge.id)
+            res.render("user/showDashboard.hbs", {healthGauge})
         })
     }
+    // ,
+    // showHealthGauge: (req, res) => {
+    //     User.findOne({_id: req.params.id})
+    //     .populate('health')
+    //     .then(healthGauge => {
+    //         res.render("user/showHealth.hbs", {healthGauge});
+    //     })
+    // }
 }
+
+// HealthGauge.create({
+//     level: req.body.level,
+//     user: req.params.id
+// })
+// .then(healthGauge => {
+//     res.redirect(`/ + ${healthGauge._id}`)
+// })
+
+// router.get('/artworks/:id', (req, res) => {
+//     Artworks.findOne({_id : req.params.id}).then(artwork => {
+//         res.render('show', artwork)
+//     })
+// })
+
+// `/ + ${healthGauge._id}`
 
 // module.exports = {
 //     newHealthGauge: (req, res) => {
