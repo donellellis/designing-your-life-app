@@ -17,22 +17,23 @@ module.exports = {
         })
     },
     editHealthGauge: (req, res) => {
-        HealthGauge.findOne({_id : req.params.id
-        })
-        .populate('user')
+        HealthGauge.findById({_id : req.params.id})
         .then(healthGauge => {
             res.render('user/editHealth.hbs', {healthGauge})
         })
     },
     putHealthGauge: (req, res) => {
         req.body.complete = req.body.complete ? true : false
-        HealthGauge.findOneAndUpdate({_id: req.params.id}, req.body, {new : true})
-        .populate('user')
+        HealthGauge.findByIdAndUpdate({_id: req.params.id}, req.body, {new : true})
         .then (healthGauge => {
-            res.redirect("/user/" + healthGauge.user, {healthGauge})
+            // res.redirect("/user/" + healthGauge.user, {healthGauge})
+            res.render("user/showDashboard.hbs", {healthGauge})
         })
     }
 }
+
+// {user : req.params.userid
+// }
 
 // router.put('/artworks/update/:id', (req, res) => {
 //     req.body.complete = req.body.complete ? true : false

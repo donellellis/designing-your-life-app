@@ -9,7 +9,7 @@ router.get('/new/:id', healthGaugeController.newHealthGauge)
 router.post('/:id', healthGaugeController.createHealthGauge)
 
 // render form to update a single resource
-router.get('/edit/:id/', healthGaugeController.editHealthGauge)
+router.get('/edit/:id', healthGaugeController.editHealthGauge)
 
 // update single resource
 router.put('/:id', healthGaugeController.putHealthGauge)

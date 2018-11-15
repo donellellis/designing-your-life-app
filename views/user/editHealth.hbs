@@ -1,9 +1,10 @@
 <h1>Edit Your Health Gauge</h1>
+<h2>{{healthGauge}}</h2>
 <div>
-    <form action="/health/{{this.id}}?_method=put" method="post" accept-charset="utf-8">
+    <form action="/health/{{healthGauge.id}}?_method=put" method="post" accept-charset="utf-8">
     <p>0
         <label name='level'></label>
-        <input type="text" value="{{this.level}}" name="level" id=""/>
+        <input type="text" value="{{healthGauge.level}}" name="level" id=""/>
         Full
     </p>
     <p>Select a number from 1 - 4</p>
