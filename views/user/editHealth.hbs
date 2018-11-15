@@ -1,0 +1,31 @@
+<h1>Edit Your Health Gauge</h1>
+<div>
+    <form action="/health/{{this.id}}?_method=put" method="post" accept-charset="utf-8">
+    <p>0
+        <label name='level'></label>
+        <input type="text" value="{{this.level}}" name="level" id=""/>
+        Full
+    </p>
+    <p>Select a number from 1 - 4</p>
+    <h2>Health Assessment</h2>
+    <label>Complete:</label>
+    {{#if complete}}
+      <input type="checkbox" name="complete" id="complete" checked/>
+    {{else}}
+      <input type="checkbox" name="complete" id="complete"/>
+    {{/if}}
+    {{!-- <label>Complete:</label>
+    {{#if complete}}
+      <input type="checkbox" name="complete" id="complete" checked/>
+    {{else}}
+      <input type="checkbox" name="complete" id="complete"/>
+    {{/if}} --}}
+    <p>
+         <input type="submit" value="Update" />
+    </p> 
+    </form>
+
+{{!-- <form action="/artworks/delete/{{this.id}}?_method=delete" method="post">
+  <input type="submit" value="Remove">
+</form>
+</div> --}}
