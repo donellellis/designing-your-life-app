@@ -13,7 +13,7 @@ module.exports = {
             user: req.params.id
         })
         .then(healthGauge => {
-            res.render("user/showDashboard.hbs", {healthGauge})
+            res.render("user/showDashboard.hbs", {healthGauge })
         })
     },
     editHealthGauge: (req, res) => {
@@ -26,32 +26,7 @@ module.exports = {
         req.body.complete = req.body.complete ? true : false
         HealthGauge.findByIdAndUpdate({_id: req.params.id}, req.body, {new : true})
         .then (healthGauge => {
-            // res.redirect("/user/" + healthGauge.user, {healthGauge})
             res.render("user/showDashboard.hbs", {healthGauge})
         })
     }
 }
-
-// {user : req.params.userid
-// }
-
-// router.put('/artworks/update/:id', (req, res) => {
-//     req.body.complete = req.body.complete ? true : false
-//     Artworks.findOneAndUpdate({_id: req.params.id}, req.body, { new : true})
-//     .then( todo => {
-//         res.redirect('/artworks/' + todo.id)
-//     })
-// })
-
-// update: (req, res) => {
-//       let { content } = req.body;
-//       Tweet.findOne({ _id: req.params.id }).then(tweet => {
-//         tweet.comments.push({
-//           content,
-//           author: req.user._id
-//         });
-//         tweet.save(err => {
-//           res.redirect(`/tweet/${tweet._id}`);
-//         });
-//       });
-//     },

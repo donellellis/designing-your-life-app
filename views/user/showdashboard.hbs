@@ -1,3 +1,9 @@
 <h1>Your Dashboard</h1>
 <h2><a href="/health/edit/{{healthGauge.id}}">Health </a>{{healthGauge.level}}</h2>
 <h3>{{healthGauge}}</h3>
+
+{{!-- <form action="/user/delete/{{user._id}}?_method=delete" method="post">
+  <input type="submit" value="Delete Account">
+</form> --}}
+
+<a href="/user/delete/{{healthGauge.user}}">Delete Account</a>

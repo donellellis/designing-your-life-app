@@ -18,5 +18,14 @@ module.exports = {
     .then(user => {
       res.render("user/show.hbs", {user});
       });
+  },
+  delete: (req, res) => {
+    User.findOneAndRemove({_id: req.params.id})
+    .then ( () => {
+      res.redirect('/');
+    })
+    .catch(err => {
+      console.log(err)
+    });
   }
 };

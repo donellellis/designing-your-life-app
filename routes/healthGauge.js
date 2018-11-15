@@ -11,15 +11,8 @@ router.post('/:id', healthGaugeController.createHealthGauge)
 // render form to update a single resource
 router.get('/edit/:id', healthGaugeController.editHealthGauge)
 
-// update single resource
+// update health gauge
 router.put('/:id', healthGaugeController.putHealthGauge)
 
-module.exports = router;
 
-// router.put('/artworks/update/:id', (req, res) => {
-//     req.body.complete = req.body.complete ? true : false
-//     Artworks.findOneAndUpdate({_id: req.params.id}, req.body, { new : true})
-//     .then( todo => {
-//         res.redirect('/artworks/' + todo.id)
-//     })
-// })
+module.exports = router;
