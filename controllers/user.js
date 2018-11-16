@@ -19,6 +19,18 @@ module.exports = {
       res.render("user/show.hbs", {user});
       });
   },
+  signIn: (req, res) => {
+    res.render("user/signin.hbs")
+  },
+  createSignIn: (req, res) => {
+    User.findOne({
+      email: req.body.email,
+      password: req.body.password
+    })
+    .then (user => {
+      res.redirect("/user/" + user.id)
+    })
+  },
   delete: (req, res) => {
     User.findOneAndRemove({_id: req.params.id})
     .then ( () => {

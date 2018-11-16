@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 
 let HealthGauge = new Schema({
 	level: Number,
+	healthAssessment: String,
 	user: {
 		ref: 'User',
 		type: Schema.Types.ObjectId

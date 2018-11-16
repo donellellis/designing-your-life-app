@@ -1,6 +1,7 @@
-<h1>Edit Your Health Gauge</h1>
-<h2>{{healthGauge}}</h2>
-<div>
+
+<div class="centerContainer">
+    <div class="centerItem">
+    <h2>Edit Your Health Gauge</h2>
     <form action="/health/{{healthGauge.id}}?_method=put" method="post" accept-charset="utf-8">
     <p>0
         <label name='level'></label>
@@ -8,14 +9,14 @@
         Full
     </p>
     <p>Select a number from 1 - 4</p>
-    <h2>Health Assessment</h2>
-    <label>Complete:</label>
-    {{#if complete}}
-      <input type="checkbox" name="complete" id="complete" checked/>
-    {{else}}
-      <input type="checkbox" name="complete" id="complete"/>
-    {{/if}}
+    <h4>Health Assessment</h4>
+    <p>
+            <label name='healthAssessment'></label>
+            <input type='text' value="{{healthGauge.healthAssessment}}" name"healthAssessment" id=""/>
+    </p>
     <p>
          <input type="submit" value="Update" />
     </p> 
     </form>
+    </div>
+</div>

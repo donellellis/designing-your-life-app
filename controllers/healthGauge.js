@@ -1,19 +1,18 @@
 const HealthGauge = require("../models/HealthGauge.js");
 const User = require("../models/User.js")
 
-// renders form to create new health gauge
 module.exports = {
     newHealthGauge: (req, res) => {
         res.render('user/createHealth.hbs', {id: req.params.id})
     },
     createHealthGauge: (req, res) => {
-        //create the health guage with the user id
         HealthGauge.create({
             level: req.body.level,
+            healthAssessment: req.body.healthAssessment,
             user: req.params.id
         })
         .then(healthGauge => {
-            res.render("user/showDashboard.hbs", {healthGauge })
+            res.render("user/showdashboard.hbs", {healthGauge})
         })
     },
     editHealthGauge: (req, res) => {
@@ -23,8 +22,7 @@ module.exports = {
         })
     },
     putHealthGauge: (req, res) => {
-        req.body.complete = req.body.complete ? true : false
-        HealthGauge.findByIdAndUpdate({_id: req.params.id}, req.body, {new : true})
+        HealthGauge.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true})
         .then (healthGauge => {
             res.render("user/showDashboard.hbs", {healthGauge})
         })

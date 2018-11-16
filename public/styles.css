@@ -1,0 +1,87 @@
+.cover{
+    display: flex;
+    flex-direction: column;
+    background-color: #68b2bd;
+    align-items: center;
+    height: 720px;
+    margin: 0px 10px 10px 10px;
+    color: white;
+    flex-flow: column;
+    text-align: center;
+}
+.coverTitle{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin: auto;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.buttonSignIn{
+    color: black;
+}
+h1{
+    font-size: 50px;
+    margin:10px;
+} 
+h2{
+    font-size: 40px;
+    margin: 10px;
+    color: #68b2bd;
+}
+h3{
+    font-size: 30px;
+    margin: 10px;
+}
+h4{
+    font-size: 30px;
+    color: #68b2bd;
+    margin: 10px;
+}
+.bookDescription{
+    width: 500px;
+}
+nav{
+    margin-left: 10px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.navLink{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.buttonSignUp{
+    background-color: white;
+    color: #68b2bd;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.centerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 720px;
+    margin: 0px 10px 10px 10px;
+    flex-flow: column;
+    text-align: center;
+}
+.centerItem{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin: auto;
+}
+.fas{
+    font-size: 40px;
+}
+.deleteButton{
+    margin: 10px;
+}
+.blueLink{
+    color: #68b2bd;
+}

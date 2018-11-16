@@ -1,5 +1,7 @@
-<h1>Create Your Health Gauge</h1>
-<div>
+
+<div class="centerContainer">
+    <div class="centerItem">
+    <h2>Create Your Health Gauge</h2>
     <form action="/health/{{id}}" method="post">
         <p>0
             <label name='level'></label>
@@ -7,10 +9,14 @@
             Full
         </p>
         <p>Select a number from 1 - 4</p>
-        <h2>Health Assessment</h2>
+        <h4>Health Assessment</h4>
+        <p>
+            <label name='healthAssessment'></label>
+            <input name='healthAssessment' type="input" />
+        </p>
         <p>
             <input label='submit' type="submit" />
         </p>
-
     </form>
+    </div>
 </div>
