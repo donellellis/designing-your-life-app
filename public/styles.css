@@ -8,12 +8,17 @@
     color: white;
     flex-flow: column;
     text-align: center;
+    background-image: url("https://i.imgur.com/g6fSIRP.png");
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    background-position: center;
 }
 .coverTitle{
     display: flex;
     align-items: center;
     flex-flow: column;
     margin: auto;
+
 }
 body{
     font-family: 'Open Sans', sans-serif;
