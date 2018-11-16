@@ -1,0 +1,44 @@
+Project 2: Designing Your Life Companion App
+
+Project Idea
+The Designing Your Life Companion App is a web-based workbook for Bill Burnett and David Evans’s book, Designing Your Life. It is a digital resource for readers to record and update their responses to the book’s exercises. The MVP app guides a user through the process of creating a Health/Work/Play/Love Dashboard where they can assess where they are and add commentary.
+
+MVP
+Models:
+* Health gauge
+    * Records user response from 1 to full on visual gauge
+    * Records user commentary
+    * Submits and directs to the next model
+
+* Dashboard
+    * Combines gauges from Health, Love, Play, and Work Gauges
+    * Can click on each of the gauge names and edit
+        * Redirects to the gauge page where a user can edit or reset(delete)
+        * Updates the gauge information on the dashboard
+* Other gauges:
+    * *Once functionality is working for health,I will duplicate for the other categories
+    * Love gauge (sim to Health)
+    * Work gauge (sim to Health)
+    * Play gauge (sim to Health)
+
+User Stories:
+* A user clicks start and gets a unique ID that is stored in a database
+* A user clicks on one of the four health gauge level buttons and their response is recorded
+* A user adds commentary on their health status and their response is recorded
+* After completing the health assessment, a user clicks next and sees a summary of their gauges on the dashboard
+* A user can edit their response to the health gauge by clicking on the name of the gauge on the dashboard, which redirects to the health page
+* On the health page a user can edit or reset (delete all) all of their responses
+* The responses are updated on the dashboard, and a user can redirect there after completing
+
+Wish List:
+* User model
+* Passport authentication
+* You Are Here page after index and before gauge pages
+* Dots on app index page are animated and move on mouse hover
+* Link to purchase book on Amazon
+* Helpful links throughout that when user hovers over a word, a definition or helpful quote from the book pops up.
+    * Example: define gravity problem
+* Additional exercises from the book
+
+Wireframes:
+(See attached)
