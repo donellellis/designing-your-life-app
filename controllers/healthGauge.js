@@ -31,7 +31,7 @@ module.exports = {
     },
     
     putHealthGauge: (req, res) => {
-        HealthGauge.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true})
+        HealthGauge.updateOne({_id: req.params.id}, req.body, {new: true})
         .then (healthGauge => {
             WorkGauge.findOne({user: healthGauge.user})
             .then( (workGauge) => {
