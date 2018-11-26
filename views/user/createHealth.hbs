@@ -2,6 +2,7 @@
 <div class="centerContainer">
     <div class="centerItem">
     <h2>Create Your Health Gauge</h2>
+    {{!-- <form action="/health/{{id}}" method="post"> --}}
     <form action="/health/{{id}}" method="post">
         <p>0
             <label name='level'></label>
@@ -15,7 +16,9 @@
             <input name='healthAssessment' type="input" />
         </p>
         <p>
-            <input label='submit' type="submit" />
+            <input label='submit' type="submit"/>
+              {{!-- <a href="/work/new/{{id}}" type="submit" class="fas fa-chevron-right"></a> --}}
+
         </p>
     </form>
     </div>

@@ -1,6 +1,7 @@
 const HealthGauge = require("../models/HealthGauge.js");
 const User = require("../models/User.js")
 
+
 module.exports = {
     newHealthGauge: (req, res) => {
         res.render('user/createHealth.hbs', {id: req.params.id})
@@ -12,7 +13,13 @@ module.exports = {
             user: req.params.id
         })
         .then(healthGauge => {
-            res.render("user/showdashboard.hbs", {healthGauge})
+            User.findById({_id: req.params.id})
+            .then(user => {
+                user.health.push(healthGauge);
+                console.log('user-Health', user);
+                user.save();
+                res.render('user/createWork.hbs', {healthGauge})
+            })
         })
     },
     editHealthGauge: (req, res) => {

@@ -7,6 +7,10 @@ let User = new Schema({
   health: [{
     ref: 'HealthGauge',
     type: Schema.Types.ObjectId
+  }],
+  work: [{
+    ref: 'WorkGauge',
+    type: Schema.Types.ObjectId
   }]
 });
 

@@ -8,5 +8,6 @@ router.get('/sign-up', userController.signUp);
 router.post('/sign-up', userController.createSignUp);
 router.get('/:id', userController.show);
 router.get('/delete/:id', userController.delete)
+router.get('/dashboard/:id', userController.showDashboard)
 
 module.exports = router;
