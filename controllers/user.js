@@ -19,6 +19,12 @@ module.exports = {
       res.render("user/show.hbs", {user});
       });
   },
+  showDashboard: (req, res) => {
+    User.findOne({_id: req.params.id})
+    .then(user => {
+      res.render("user/showDashboard.hbs", {user})
+    })
+  },
   signIn: (req, res) => {
     res.render("user/signin.hbs")
   },
