@@ -1,0 +1,23 @@
+
+<div class="centerContainer">
+    <div class="centerItem">
+    <h2>Edit Your Work Gauge</h2>
+    <form action="/work/{{workGauge.id}}?_method=put" method="post" accept-charset="utf-8">
+    <p>0
+        <label name='level'></label>
+        <input type="text" value="{{workGauge.level}}" name="level" id=""/>
+        Full
+    </p>
+    <p>Select a number from 1 - 4</p>
+    <h4>Work Assessment</h4>
+    <p>
+            <label name='workAssessment'></label>
+            <input type='text' value="{{workGauge.workAssessment}}" name"workAssessment" id=""/>
+    </p>
+    <p>
+         <input type="submit" value="Update" />
+    </p> 
+    </form>
+    </div>
+</div>
+

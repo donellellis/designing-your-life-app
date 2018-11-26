@@ -16,7 +16,6 @@ module.exports = {
             User.findById({_id: req.params.id})
             .then(user => {
                 user.work.push(workGauge);
-                console.log('user-Work', user);
                 user.save();
                 HealthGauge.findOne({user: req.params.id})
                 .then(healthGauge => {
@@ -31,5 +30,29 @@ module.exports = {
                 });
             })
         })
+    },
+    editWorkGauge: (req, res) => {
+        WorkGauge.findById({_id : req.params.id})
+        .then(workGauge => {
+            res.render('user/editWork.hbs', {workGauge})
+        })
+    },
+    putWorkGauge: (req, res) => {
+        WorkGauge.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true})
+        .then (workGauge => {
+            HealthGauge.findOne({user: workGauge.user})
+            .then ((healthGauge) => {
+                const dashboardData = {
+                    id: workGauge.user,
+                    workLevel: workGauge.level,
+                    healthLevel: healthGauge.level,
+                    workId: workGauge._id ,
+                    healthId: healthGauge._id
+            }
+            res.render("user/showDashboard.hbs", {dashboardData})
+            })
+        })
     }
+    
 }
+
