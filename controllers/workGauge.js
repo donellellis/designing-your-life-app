@@ -43,7 +43,7 @@ module.exports = {
             HealthGauge.findOne({user: workGauge.user})
             .then ((healthGauge) => {
                 const dashboardData = {
-                    id: workGauge.user,
+                    id: healthGauge.user,
                     workLevel: workGauge.level,
                     healthLevel: healthGauge.level,
                     workId: workGauge._id ,
