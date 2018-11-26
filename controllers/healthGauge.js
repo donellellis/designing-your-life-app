@@ -31,12 +31,12 @@ module.exports = {
     },
     
     putHealthGauge: (req, res) => {
-        HealthGauge.finByIdAndUpdate({_id: req.params.id}, req.body, {new: true})
+        HealthGauge.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true})
         .then (healthGauge => {
             WorkGauge.findOne({user: healthGauge.user})
             .then( (workGauge) => {
                 const dashboardData = {
-                    id: healthGauge.user,
+                    id: workGauge.user,
                     workLevel: workGauge.level,
                     healthLevel: healthGauge.level,
                     workId: workGauge._id ,
