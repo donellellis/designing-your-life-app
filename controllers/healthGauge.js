@@ -42,7 +42,7 @@ module.exports = {
                     workId: workGauge._id ,
                     healthId: healthGauge._id
                 }
-                res.render("user/showDashboard.hbs", {dashboardData})
+                res.render("user/showdashboard.hbs", {dashboardData})
             })
             
         })
